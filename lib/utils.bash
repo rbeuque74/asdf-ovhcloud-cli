@@ -41,9 +41,6 @@ get_arch() {
 	arm64)
 		arch='arm64'
 		;;
-	arm6)
-		arch='arm6'
-		;;
 	x86_64)
 		arch='x86_64'
 		;;
