@@ -36,65 +36,65 @@ list_all_versions() {
 }
 
 get_arch() {
-  arch=$(uname -m | tr '[:upper:]' '[:lower:]')
-  case ${arch} in
-    arm64)
-      arch='arm64'
-      ;;
-    arm6)
-      arch='arm6'
-      ;;
-    x86_64)
-      arch='x86_64'
-      ;;
-    aarch64)
-      arch='arm64'
-      ;;
-    i386)
-      arch='i386'
-      ;;
-  esac
+	arch=$(uname -m | tr '[:upper:]' '[:lower:]')
+	case ${arch} in
+		arm64)
+			arch='arm64'
+			;;
+		arm6)
+			arch='arm6'
+			;;
+		x86_64)
+			arch='x86_64'
+			;;
+		aarch64)
+			arch='arm64'
+			;;
+		i386)
+			arch='i386'
+			;;
+	esac
 
-  echo "${arch}"
+	echo "${arch}"
 }
 
 get_platform() {
-  plat=$(uname | tr '[:upper:]' '[:lower:]')
-  case ${plat} in
-    darwin)
-      plat='Darwin'
-      ;;
-    linux)
-      plat='Linux'
-      ;;
-    windows)
-      plat='Windows'
-      ;;
-  esac
+	plat=$(uname | tr '[:upper:]' '[:lower:]')
+	case ${plat} in
+		darwin)
+			plat='Darwin'
+			;;
+		linux)
+			plat='Linux'
+			;;
+		windows)
+			plat='Windows'
+			;;
+	esac
 
-  echo "${plat}"
+	echo "${plat}"
 }
 
 get_ext() {
-  plat=$(uname | tr '[:upper:]' '[:lower:]')
-  case ${plat} in
-    windows)
-      ext='zip'
-      ;;
-    *)
-      ext='tar.gz'
-      ;;
-  esac
+	plat=$(uname | tr '[:upper:]' '[:lower:]')
+	case ${plat} in
+		windows)
+			ext='zip'
+			;;
+		*)
+			ext='tar.gz'
+			;;
+	esac
 
-  echo "${ext}"
+	echo "${ext}"
 }
 
 download_release() {
 	local version filename url
 	version="$1"
-    filename=$2
+	filename=$2
 
-    url="$GH_REPO/releases/download/v${version}/$(basename ${filename})"
+	url="$GH_REPO/releases/download/v${version}/$(basename "${filename}")"
 
 	echo "* Downloading $TOOL_NAME release $version..."
 	curl "${curl_opts[@]}" -o "$filename" -C - "$url" || fail "Could not download $url"
