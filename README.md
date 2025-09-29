@@ -22,8 +22,6 @@
 Plugin:
 
 ```shell
-asdf plugin add ovhcloud-cli
-# or
 asdf plugin add ovhcloud-cli https://github.com/rbeuque74/asdf-ovhcloud-cli.git
 ```
 
@@ -37,7 +35,7 @@ asdf list-all ovhcloud-cli
 asdf install ovhcloud-cli latest
 
 # Set a version globally (on your ~/.tool-versions file)
-asdf global ovhcloud-cli latest
+asdf set -u ovhcloud-cli latest
 
 # Now ovhcloud-cli commands are available
 ovhcloud --help
