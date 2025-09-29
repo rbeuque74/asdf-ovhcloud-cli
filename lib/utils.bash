@@ -38,21 +38,21 @@ list_all_versions() {
 get_arch() {
 	arch=$(uname -m | tr '[:upper:]' '[:lower:]')
 	case ${arch} in
-		arm64)
-			arch='arm64'
-			;;
-		arm6)
-			arch='arm6'
-			;;
-		x86_64)
-			arch='x86_64'
-			;;
-		aarch64)
-			arch='arm64'
-			;;
-		i386)
-			arch='i386'
-			;;
+	arm64)
+		arch='arm64'
+		;;
+	arm6)
+		arch='arm6'
+		;;
+	x86_64)
+		arch='x86_64'
+		;;
+	aarch64)
+		arch='arm64'
+		;;
+	i386)
+		arch='i386'
+		;;
 	esac
 
 	echo "${arch}"
@@ -61,15 +61,15 @@ get_arch() {
 get_platform() {
 	plat=$(uname | tr '[:upper:]' '[:lower:]')
 	case ${plat} in
-		darwin)
-			plat='Darwin'
-			;;
-		linux)
-			plat='Linux'
-			;;
-		windows)
-			plat='Windows'
-			;;
+	darwin)
+		plat='Darwin'
+		;;
+	linux)
+		plat='Linux'
+		;;
+	windows)
+		plat='Windows'
+		;;
 	esac
 
 	echo "${plat}"
@@ -78,12 +78,12 @@ get_platform() {
 get_ext() {
 	plat=$(uname | tr '[:upper:]' '[:lower:]')
 	case ${plat} in
-		windows)
-			ext='zip'
-			;;
-		*)
-			ext='tar.gz'
-			;;
+	windows)
+		ext='zip'
+		;;
+	*)
+		ext='tar.gz'
+		;;
 	esac
 
 	echo "${ext}"
