@@ -29,7 +29,7 @@ ovhcloud-cli:
 
 ```shell
 # Show all installable versions
-asdf list-all ovhcloud-cli
+asdf list all ovhcloud-cli
 
 # Install specific version
 asdf install ovhcloud-cli latest
